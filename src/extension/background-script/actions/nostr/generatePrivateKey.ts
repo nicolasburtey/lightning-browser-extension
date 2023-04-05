@@ -14,7 +14,7 @@ const generatePrivateKey = async (message: MessagePrivateKeyGenerate) => {
   if (privateKey)
     return {
       data: {
-        privateKey: secp256k1.utils.bytesToHex(privateKey),
+        privateKey: secp256k1.etc.bytesToHex(privateKey),
       },
     };
   else
@@ -45,7 +45,7 @@ const deriveKey = async () => {
 
     // Use SHA-512 to provide enough key material for secp256k1 (> 40 bytes)
     const hash = sha512(keymaterial).toString(Hex);
-    const privateKey = secp256k1.utils.hashToPrivateKey(hash);
+    const privateKey = secp256k1.etc.hashToPrivateKey(hash);
     return privateKey;
   } catch (e) {
     console.error(e);

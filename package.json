@@ -38,6 +38,7 @@
     "@bitcoin-design/bitcoin-icons-react": "^0.1.9",
     "@headlessui/react": "^1.7.12",
     "@lightninglabs/lnc-web": "^0.2.2-alpha",
+    "@noble/curves": "^0.9.1",
     "@noble/secp256k1": "^2.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
