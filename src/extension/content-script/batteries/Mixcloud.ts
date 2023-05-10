@@ -1,3 +1,4 @@
+import fetchAdapter from "@vespaiach/axios-fetch-adapter";
 import axios from "axios";
 
 import getOriginData from "../originData";
@@ -44,7 +45,9 @@ async function handleShowPage(username: string) {
 }
 
 async function handleProfilePage(username: string) {
-  const userResponse = await axios.get(`https://api.mixcloud.com/${username}`);
+  const userResponse = await axios.get(`https://api.mixcloud.com/${username}`, {
+    adapter: fetchAdapter,
+  });
   if (!userResponse) return;
   const userInfo = await userResponse.data;
 
